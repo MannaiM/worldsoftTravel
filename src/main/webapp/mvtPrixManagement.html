@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html data-ng-app="myApp">
+<head>
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="css/app.css" />
+
+
+<script type="text/javascript"
+	src="bower_components/angularjs/angular.min.js"></script>
+<script type="text/javascript"
+	src="bower_components/sockjs/sockjs.min.js"></script>
+
+<script type="text/javascript" src="angular-beans.js"></script>
+
+<script type="text/javascript" src="js/filters.js"></script>
+<script type="text/javascript" src="js/services.js"></script>
+<script type="text/javascript" src="js/controllers.js"></script>
+<script type="text/javascript" src="js/directives.js"></script>
+<script type="text/javascript" src="js/module.js"></script>
+
+
+<title>new user</title>
+</head>
+
+<body ng-app="myApp" ng-controller="MvmPrixCtrl as vm">
+
+	<div class="container">
+		<div class="row top-buffer">
+			<div class="col-xs-8 col-xs-offset-2">
+
+				<div>
+
+					<fieldset>
+						<label>categorie Hotel: </label> 
+						<select
+							ng-model="vm.mvmntPrixBean.mvtH.hotel.idHotel">
+							<option value="{{hotel.idHo}}"
+								ng-repeat="hotel in vm.mvmntPrixBean.hotels">{{hotel.categorieHotel}}</option>
+						</select>
+					</fieldset>
+					</div>
+					<div class="checkbox-list"
+						ng-model="vm.mvmntPrixBean.mvtH.jour.idJour">
+						<label> <input type="checkbox" value="{{jour.idjour}}"
+							ng-click="vm.toggle(jour.idjour)"> {{jour.nomjour}}
+						</label>
+
+					</div>
+					<div class="checkbox-list"
+						ng-model="vm.mvmntPrixBean.mvtH.typeChambre.idTCham">
+						<label> <input type="checkbox"
+							ng-click="vm.toggle(typeChambre.idTCham)">
+							{{typeChambre.nomTCham}}
+						</label>
+
+					</div>
+					<div class="checkbox-list"
+						ng-model="vm.mvmntPrixBean.mvtH.arrangement.idarr">
+						<label> <input type="checkbox"
+							ng-click="vm.toggle(arrangement.idarr)">
+							{{arrangement.nomarr}}
+						</label>
+
+					</div>
+
+					<button ng-click="vm.addMvmentPrix()" class="btn btn-primary">click
+						me</button>
+
+
+				</div>
+			</div>
+		</div>
+	
+</body>
+</html>

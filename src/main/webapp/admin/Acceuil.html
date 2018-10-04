@@ -1,0 +1,159 @@
+<!-- BEGIN CONTENT -->
+<div class="page-content-wrapper" ng-controller="AcceuilCtrl as vm">
+	<div class="page-content">
+		<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+		<div class="modal fade" id="portlet-config" tabindex="-1"
+			role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-hidden="true"></button>
+						<h4 class="modal-title">Modal title</h4>
+					</div>
+					<div class="modal-body">Widget settings form goes here</div>
+					<div class="modal-footer">
+						<button type="button" class="btn blue">Save changes</button>
+						<button type="button" class="btn default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+		<!-- /.modal -->
+		<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+
+		<!-- BEGIN PAGE HEADER-->
+		<h3 class="page-title">
+			WorldSoft<small> </small>
+		</h3>
+		<div class="page-bar">
+			<ul class="page-breadcrumb">
+				<li><i class="fa fa-home"></i> <a href="#/Acceuil">Home</a> <i
+					class="fa fa-angle-right"></i></li>
+				<li><a href="#"></a></li>
+			</ul>
+
+		</div>
+		<!-- END PAGE HEADER-->
+		<!-- BEGIN PAGE CONTENT-->
+		<!-- BEGIN DASHBOARD STATS -->
+
+
+
+		<div class="tiles">
+			<a ng-href="#/gereruser" ng-if="role == 1">
+				<div class="tile double-down bg-blue-hoki">
+					<div class="tile-body">
+						<i class="fa fa-user"></i>
+					</div>
+					<div class="tile-object">
+						<div class="name">Gerer les User de WordSoft</div>
+
+					</div>
+				</div>
+
+
+			</a> <a href="#/gererHotel">
+				<div class="tile bg-red-sunglo">
+					<div class="tile-body">
+						<i class="fa fa-header"></i>
+					</div>
+					<div class="tile-object">
+						<div class="name">Gerer les Hotels</div>
+
+					</div>
+				</div>
+			</a> <a href="#/gererchm">
+				<div class="tile image double selected">
+					<div class="tile-body">
+						<img src="assets/admin/layout/img/hotel1.jpg" alt="">
+					</div>
+					<div class="tile-object">
+						<div class="name">Gerer les chambre d'Hotels</div>
+
+					</div>
+				</div>
+			</a>
+			<div class="tile image selected">
+				<div class="tile-body">
+					<img src="assets/admin/layout/img/hotel2.jpg" alt="">
+				</div>
+				<div class="tile-object">
+					<div class="name"></div>
+				</div>
+			</div>
+
+
+			<a href="#/gererPrm">
+
+				<div class="tile bg-green-meadow">
+					<div class="tile-body">
+						<i class="fa fa-bar-chart-o"></i>
+					</div>
+					<div class="tile-object">
+						<div class="name">gerer les Promotions</div>
+
+					</div>
+
+				</div>
+			</a> <a href="#/gererbS">
+				<div class="tile double bg-blue-madison">
+					<div class="tile-body">
+						<img src="assets/admin/layout/img/Avion.jpg" alt="">
+						<h4>Gerer les Block Siege</h4>
+						<p>Ajouter un blockSiege (Vol) avec un Type de Classe</p>
+					</div>
+					<div class="tile-object">
+						<div class="name">Vol</div>
+
+					</div>
+				</div>
+			</a> <a href="#/gererAvion">
+				<div class="tile bg-red-intense">
+					<div class="tile-body">
+						<i class="fa fa-plane"></i>
+					</div>
+					<div class="tile-object">
+						<div class="name">gerer les Avions</div>
+
+					</div>
+				</div>
+			</a> <a href="#/gererReduction">
+				<div class="tile bg-green">
+					<div class="tile-body">
+						<i class="fa fa-bar-chart-o"></i>
+					</div>
+					<div class="tile-object">
+						<div class="name">gerer les Reductions</div>
+						<div class="number"></div>
+					</div>
+				</div>
+			</a> <a href="#/gerertilis" ng-if="role == 1">
+				<div class="tile bg-blue-steel" ng-if="role == 1">
+					<div class="tile-body">
+						<i class="fa fa-user"></i>
+					</div>
+					<div class="tile-object">
+						<div class="name">gerer les Clients</div>
+
+					</div>
+				</div>
+
+			</a>
+
+		</div>
+
+
+
+
+
+		<!-- END DASHBOARD STATS -->
+		<!-- END PAGE CONTENT-->
+
+	</div>
+	<!-- END CONTENT -->
+</div>
+
+<!-- END CONTAINER -->

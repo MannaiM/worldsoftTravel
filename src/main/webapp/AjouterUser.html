@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html data-ng-app="myApp">
+<head>
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="css/app.css" />
+
+<script type="text/javascript"
+	src="bower_components/angularjs/angular.min.js"></script>
+<script type="text/javascript"
+	src="bower_components/sockjs/sockjs.min.js"></script>
+
+<script type="text/javascript" src="angular-beans.js"></script>
+
+<script type="text/javascript" src="js/filters.js"></script>
+<script type="text/javascript" src="js/services.js"></script>
+<script type="text/javascript" src="js/controllers.js"></script>
+<script type="text/javascript" src="js/directives.js"></script>
+<script type="text/javascript" src="js/module.js"></script>
+
+<meta charset="ISO-8859-1">
+<title>hello world</title>
+</head>
+
+<body ng-app="myApp">
+
+	<div class="container">
+		<div class="row top-buffer">
+			<div class="col-xs-8 col-xs-offset-2">
+
+				<div ng-controller="UserCtrl as vm">
+					<div class="form-group">
+						<fieldset>
+							<label>NomUser: </label> <input
+								ng-model="vm.userBean.user.nomUser" class="form-control"  ng-minlength="2" ng-maxlength="30">
+						</fieldset>
+						<fieldset>
+							<label>Role: </label> <select ng-model="vm.userBean.user.role.idRole">
+								<option value="{{role.idRol}}"
+									ng-repeat="role in vm.userBean.roles">{{role.lRol}}</option>
+							</select>
+						</fieldset>
+						
+						<fieldset>
+							<label>loginUser: </label> 
+							<input ng-model="vm.userBean.user.userLogin" class="form-control"
+							 ng-minlength="2" ng-maxlength="20"/>
+						
+						</fieldset>
+						<fieldset>
+							<label>Userpwd</label> <input  ng-minlength="4" ng-maxlength="20" ng-model="vm.userBean.user.userPwd"
+								type="password" class="form-control" > 
+								
+						</fieldset>
+						
+
+						<button ng-click="vm.addRefUser()" class="btn btn-primary">click
+							me</button>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+</body>
+</html>

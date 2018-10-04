@@ -1,0 +1,149 @@
+<!-- BEGIN CONTENT -->
+<div class="page-content-wrapper" ng-controller="AjouterArrCtrl as vm">
+	<div class="page-content">
+		<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+		<div class="modal fade" id="portlet-config" tabindex="-1"
+			role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-hidden="true"></button>
+						<h4 class="modal-title">Modal title</h4>
+					</div>
+					<div class="modal-body">Widget settings form goes here</div>
+					<div class="modal-footer">
+						<button type="button" class="btn blue">Save changes</button>
+						<button type="button" class="btn default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+		<!-- /.modal -->
+		<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+
+		<!-- BEGIN PAGE HEADER-->
+		<h3 class="page-title">
+			WorldSoft<small> </small>
+		</h3>
+		<div class="page-bar">
+			<ul class="page-breadcrumb">
+				<li><i class="fa fa-home"></i> <a href="#/Acceuil">Home</a> <i
+					class="fa fa-angle-right"></i></li>
+				<li><a href="#"></a></li>
+			</ul>
+
+		</div>
+		<!-- END PAGE HEADER-->
+		<!-- BEGIN PAGE CONTENT-->
+		<!-- BEGIN DASHBOARD STATS -->
+		<div ng-controller="AjouterArrCtrl as vm">
+			<div class="row  dashboard-stat breadcrumb">
+				<div>
+					<blockquote class="hero">
+						<p>afficher ts les arrangement</p>
+					</blockquote>
+				</div>
+
+
+				<div class="row">
+
+					<label>Hotel: </label> <select
+						ng-model="vm.ajouterArrBean.ajtArr.idHotel"
+						ng-change="vm.findArrangementByHotell(vm.ajouterArrBean.ajtArr.idHotel)">
+						<option value="{{hotel.idHo}}"
+							ng-repeat="hotel in vm.ajouterArrBean.hotels">{{hotel.NomHo}}</option>
+					</select>
+
+				</div>
+
+			</div>
+			<a href="#/AjouterArrangement"
+				class="btn btn-default btn-sm bg-blue-chambray"> <i
+				class="fa fa-pencil"></i> Ajouter Arrangement
+			</a>
+<div ng-if="vm.ajouterArrBean.editArranM == 'arrangement Modifié'" class="alert alert-block alert-success fade in">
+						<button type="button" class="close" data-dismiss="alert"></button>
+						<h4 class="alert-heading">Success!</h4>
+						<p> Arrangement Modifié avec succés </p>
+						</div>
+
+
+
+			<!-- BEGIN SAMPLE TABLE PORTLET-->
+			<div class="portlet">
+				<div class="portlet-title">
+					<div class="caption">
+						<i class="fa fa-bell-o"></i>Table Arrangement
+					</div>
+					<div class="tools">
+						<a href="javascript:;" class="collapse"> </a> <a
+							href="#portlet-config" data-toggle="modal" class="config"> </a> <a
+							href="javascript:;" class="reload"> </a> <a href="javascript:;"
+							class="remove"> </a>
+					</div>
+				</div>
+
+
+				<div class="portlet-body">
+					<div class="table-scrollable">
+
+						<table
+							class="table table-striped table-bordered table-advance table-hover">
+							<thead>
+								<tr>
+
+									<th>id</th>
+									<th>nom Arrangement</th>
+									<th>label arrangement</th>
+
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td></td>
+									<td><input class="form-control placeholder-no-fix"
+										type="text" autocomplete="off" placeholder="Nom Arrangement"
+										ng-model="vm.ajouterArrBean.ajtArr.nomarr" /></td>
+									<td><input class="form-control placeholder-no-fix"
+										type="text" autocomplete="off" placeholder="labelle Arrangement"
+										name="username" ng-model="vm.ajouterArrBean.ajtArr.labArr" /></td>
+									<td><a href="javascript:;" ng-click="vm.addArrangementH()"
+										class="btn default btn-xs red-stripe"> <i
+											class="fa fa-trash-o"></i> ADD
+									</a> <a href="javascript:;" ng-click="vm.editArrangementH()"
+										class="btn btn-default btn-sm green-stripe"> <i
+											class="fa fa-pencil"></i> Edit
+									</a></td>
+								</tr>
+								<tr ng-repeat="arrangement in vm.ajouterArrBean.arrangements">
+									<td class="hidden-xs">{{arrangement.idarr}}</td>
+									<td class="highlight">{{arrangement.nomarr}}</td>
+									<td class="hidden-xs">{{arrangement.labArr}}</td>
+									<td><a href="javascript:;"
+										ng-click="vm.ajouterArrBean.deleteArrangement(arrangement.idarr,vm.ajouterArrBean.ajtArr.idHotel)"
+										class="btn default btn-xs red-stripe"> <i
+											class="fa fa-trash-o"></i> Delete
+									</a> <a href="javascript:;"
+										ng-click="vm.getArrangementHtoEdit(arrangement)"
+										class="btn btn-default btn-sm green-stripe"> <i
+											class="fa fa-pencil"></i> Edit
+									</a></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+
+					<!-- END DASHBOARD STATS -->
+					<!-- END PAGE CONTENT-->
+
+				</div>
+				<!-- END CONTENT -->
+			</div>
+		</div>
+		<!-- END CONTAINER -->
+	</div>
+</div>

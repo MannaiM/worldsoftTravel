@@ -1,0 +1,161 @@
+ <!-- BEGIN CONTENT -->
+	<div class="page-content-wrapper" ng-controller="AjouterPeriodeCtrl as vm" >
+		<div class="page-content">
+			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			<div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+							<h4 class="modal-title">Modal title</h4>
+						</div>
+						<div class="modal-body">
+							 Widget settings form goes here
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn blue">Save changes</button>
+							<button type="button" class="btn default" data-dismiss="modal">Close</button>
+						</div> 
+					</div>
+					<!-- /.modal-content -->
+				</div>
+				<!-- /.modal-dialog -->
+			</div>
+			<!-- /.modal -->
+			<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			
+			<!-- BEGIN PAGE HEADER-->
+			<h3 class="page-title">
+			WorldSoft<small> </small>
+			</h3>
+			<div class="page-bar">
+				<ul class="page-breadcrumb">
+					<li>
+						<i class="fa fa-home"></i>
+						<a href="#/Acceuil">Home</a>
+						<i class="fa fa-angle-right"></i>
+					</li>
+					<li>
+						<a href="#"></a>
+					</li>
+				</ul>
+		
+			</div>
+			<!-- END PAGE HEADER-->
+			<!-- BEGIN PAGE CONTENT-->
+			<!-- BEGIN DASHBOARD STATS -->
+			<div  ng-controller="AjouterPeriodeCtrl as vm">
+			<div class="row  dashboard-stat breadcrumb">
+	               
+					
+					<div class="row">
+
+							<label class="green">Hotel: </label> <select
+								ng-model="vm.periodeBean.ajtP.idHotel"
+								ng-change="vm.findPeriodeByHotels(vm.periodeBean.ajtP.idHotel)">
+								<option value="{{hotel.idHo}}"
+									ng-repeat="hotel in vm.periodeBean.hotels">{{hotel.NomHo}}</option>
+							</select>
+                           
+						</div>
+						<a href="#/AjouterPeriode">
+						<button  class="btn btn-default btn-sm  bg-blue-chambray">
+								        <i class="fa fa-pencil"></i>Ajouter Periode
+							</button>
+                                   </a>
+<div class="portlet-title">
+							<div class="caption">
+								<i class="fa fa-bell-o"></i>Table Periode
+							</div>
+							<div class="tools">
+								<a href="javascript:;" class="collapse">
+								</a>
+								<a href="#portlet-config" data-toggle="modal" class="config">
+								</a>
+								<a href="javascript:;" class="reload">
+								</a>
+								<a href="javascript:;" class="remove">
+								</a>
+							</div>
+						</div>
+						<div ng-if="vm.periodeBean.editPeriodeM == 'Periode Modifié'" class="alert alert-block alert-success fade in">
+						<button type="button" class="close" data-dismiss="alert"></button>
+						<h4 class="alert-heading">Success!</h4>
+						<p> Periode Modifiée Pour vérifier il suffit de refreché la page et choisir votre Hotel </p>
+						</div>
+						
+						<div class="portlet-body">
+							<div class="table-scrollable">
+							
+							<table  class="table table-striped table-bordered table-advance table-hover">
+								<thead>
+								
+									<tr>
+										
+										<th>id Per</th>
+										<th>nom Periode</th>
+								        <th>label Periode</th>
+										 <th>date deb</th>
+										  <th>date fin</th>
+										  <th>C or O</th>
+									</tr>
+								</thead>
+								<tbody>
+								<tr>
+								<td> id : {{vm.periodeBean.ajtP.idP}} </td>
+								<td> nom: {{vm.periodeBean.ajtP.nomP}}</td>
+									<td>label: {{vm.periodeBean.ajtP.lblP}}</td>
+									<td><input class="form-control placeholder-no-fix"
+										type="text" pikaday="myPickerObject" placeholder="Date debut"
+										ng-model="vm.periodeBean.ajtP.dtDeb" /></td>
+									<td><input class="form-control placeholder-no-fix"
+										type="text" pikaday="myPickerObject" placeholder="date Fin"
+										name="username" ng-model="vm.periodeBean.ajtP.dtFin" /></td>
+										<td><select ng-model="vm.periodeBean.ajtP.close">
+											<option value="C">Closed</option>
+											<option value="O">Open</option>
+											</select>
+											</td>
+									<td><a href="javascript:;" ng-click="vm.editPeriode()"
+										class="btn btn-default btn-sm green-stripe"> <i
+											class="fa fa-pencil"></i> Edit
+									</a></td>
+									
+								</tr>
+									<tr ng-repeat="periode in vm.periodeBean.periodes">
+										<td class="hidden-xs" value="{{periode.idP}}">{{periode.idP}}</td>
+										<td class="highlight" value="{{periode.idP}}">{{periode.nomP}}</td>
+										<td class="hidden-xs" value="{{periode.idP}}">{{periode.lblP}}</td>
+										<td class="highlight" value="{{periode.idP}}">{{periode.dtDeb}}</td>
+										<td class="hidden-xs" value="{{periode.idP}}">{{periode.dtFin}}</td>
+										<td class="hidden-xs" value="{{periode.idP}}">{{periode.close}}</td>
+									    <td>
+										<a href="javascript:;" ng-click="vm.periodeBean.deletePeriode(periode.idP,vm.periodeBean.ajtP.idHotel)" class="btn default btn-xs red-stripe">
+										<i class="fa fa-trash-o"></i> Delete </a>
+										<a href="javascript:;" ng-click="vm.getPeriodeHtoEdit(periode)" class="btn btn-default btn-sm green-stripe">
+								        <i class="fa fa-pencil"></i> To edit </a>
+										
+									    </td>
+									</tr>
+									</tbody>
+							</table>
+						</div>
+				       
+				       
+				       
+				       
+				       </div>
+	
+	
+	
+		
+			<!-- END DASHBOARD STATS -->
+		<!-- END PAGE CONTENT-->
+	
+	</div>
+	<!-- END CONTENT -->
+	
+</div>
+</div>
+<!-- END CONTAINER -->
+</div>

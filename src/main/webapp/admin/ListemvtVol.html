@@ -1,0 +1,182 @@
+<!-- BEGIN CONTENT -->
+	<div class="page-content-wrapper" >
+		<div class="page-content">
+			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			<div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+							<h4 class="modal-title">Modal title</h4>
+						</div>
+						<div class="modal-body">
+							 Widget settings form goes here
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn blue">Save changes</button>
+							<button type="button" class="btn default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+					<!-- /.modal-content -->
+				</div>
+				<!-- /.modal-dialog -->
+			</div>
+			<!-- /.modal -->
+			<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			
+			<!-- BEGIN PAGE HEADER-->
+			<h3 class="page-title">
+			WorldSoft<small> </small>
+			</h3>
+			<div class="page-bar">
+				<ul class="page-breadcrumb">
+					<li>
+						<i class="fa fa-home"></i>
+						<a href="#/Acceuil">Home</a>
+						<i class="fa fa-angle-right"></i>
+					</li>
+					<li>
+						<a href="#"></a>
+					</li>
+				</ul>
+		
+			</div>
+			<!-- END PAGE HEADER-->
+			<!-- BEGIN PAGE CONTENT-->
+			<!-- BEGIN DASHBOARD STATS -->
+			<div  ng-controller="MvmntPrixVolCtrl as vm">
+			<div class="row  dashboard-stat breadcrumb">
+			<div>
+			<blockquote class="hero">
+			<p>afficher les prix des Vols diponibles </p>
+			</blockquote>
+			</div>
+			<div class="col-md-3 ">
+			Choisir un avion
+			<div class="row">
+				<label>Avion: </label> <select
+								ng-model="vm.mvmntPrixVolBean.mvtV.idavion" 
+								ng-change="vm.mvmntPrixVolBean.findAllMvmentPrixVol(vm.mvmntPrixVolBean.mvtV.idavion)">
+								<option value="{{avion.idavion}}"
+									ng-repeat="avion in vm.mvmntPrixVolBean.avions">{{avion.nomavion}}</option>
+							</select>
+                           
+						</div>
+						</div>
+			<div class="col-md-3 ">
+			choisir un id pour voir le vol avec escale
+			<label>id Segment: </label> <select
+								ng-model="vm.mvmntPrixVolBean.mvtV.idVolSegment" 
+								ng-change="vm.mvmntPrixVolBean.findAllbyseg(vm.mvmntPrixVolBean.mvtV.idVolSegment)">
+								<option value="{{idseg.idVolSegment}}"
+									ng-repeat="idseg in vm.mvmntPrixVolBean.idsegs">{{idseg.idVolSegment}}</option>
+							</select>
+							choisir le vol d'aprés le numVol
+			<label>Num Vol: </label> <select
+								ng-model="vm.mvmntPrixVolBean.mvtV.numVol" 
+								ng-change="vm.mvmntPrixVolBean.findAllbynumVol(vm.mvmntPrixVolBean.mvtV.numVol)">
+								<option value="{{numV.numVol}}"
+									ng-repeat="numV in vm.mvmntPrixVolBean.numVs">{{numV.numVol}}</option>
+							</select>
+			<a ng_href="#/Page AddNewVol" class="btn btn-default btn-sm bg-blue-chambray">
+								        <i class="fa fa-pencil"></i> Ajouter Vol </a>
+	              
+				
+			
+				</div>
+
+					 
+												
+
+						<div class="portlet-title">
+							<div class="caption">
+								<i class="fa fa-bell-o"></i>Table Ligne Vol
+							</div>
+							<div class="tools">
+								<a href="javascript:;" class="collapse">
+								</a>
+								<a href="#portlet-config" data-toggle="modal" class="config">
+								</a>
+								<a href="javascript:;" class="reload">
+								</a>
+								<a href="javascript:;" class="remove">
+								</a>
+							</div>
+						</div>
+						
+						
+						<div class="portlet-body">
+							<div class="table-scrollable">
+							
+							<table  class="table table-striped table-bordered table-advance table-hover">
+								<thead>
+									<tr>
+										
+										<th>idPrix</th>
+										<th>idVolSegment</th>
+								        <th>numVol</th>
+										
+										<th>date Reservation</th>
+										<th>Horraire Depart</th>
+								        <th>Duree de Vol</th>
+								        
+										<th>Prix de Vente</th>
+										<th>Marge</th>
+										<th>Prix d'Achat</th>
+										
+								        <th>Depart</th>
+										<th>Arrivé</th>
+										<th>ClasseVol</th>
+										
+										<th>Escale</th>
+								        <th>nombre de Place</th>
+										<th>villDest</th>
+										<th>payDest</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr ng-repeat="mvtPrixV in vm.mvmntPrixVolBean.mvtPrixVs">
+									<td class="hidden-xs" value="{{mvtPrixV.idPrix}}">{{mvtPrixV.idPrix}}</td>
+									<td class="hidden-xs" value="{{mvtPrixV.idPrix}}">{{mvtPrixV.idVolSegment}}</td>
+									<td class="hidden-xs" value="{{mvtPrixV.idPrix}}">{{mvtPrixV.numVol}}</td>
+									<td class="hidden-xs" value="{{mvtPrixV.idPrix}}">{{mvtPrixV.dateRes}}</td>
+									<td class="hidden-xs" value="{{mvtPrixV.idPrix}}">{{mvtPrixV.horrairedepart}}</td>
+									<td class="hidden-xs" value="{{mvtPrixV.idPrix}}">{{mvtPrixV.dureeVol}}</td>
+									<td class="highlight" value="{{mvtPrixV.idPrix}}">{{mvtPrixV.prixVente}}</td>
+									<td class="hidden-xs" value="{{mvtPrixV.idPrix}}">{{mvtPrixV.marge}}</td>
+									<td class="highlight" value="{{mvtPrixV.idPrix}}">{{mvtPrixV.prixAchat}}</td>
+									<td class="hidden-xs" value="{{mvtPrixV.idPrix}}">{{mvtPrixV.dep}}</td>
+									<td class="hidden-xs" value="{{mvtPrixV.idPrix}}">{{mvtPrixV.arr}}</td>
+									<td class="hidden-xs" value="{{mvtPrixV.idPrix}}">{{mvtPrixV.idClassVol}}</td>
+										
+									<td class="hidden-xs" value="{{mvtPrixV.idPrix}}">{{mvtPrixV.escale}}</td>
+									<td class="hidden-xs" value="{{mvtPrixV.idPrix}}">{{mvtPrixV.nbrP}}</td>
+										
+									<td class="hidden-xs" value="{{mvtPrixV.idPrix}}">{{mvtPrixV.payDest}}</td>
+									<td class="hidden-xs" value="{{mvtPrixV.idPrix}}">{{mvtPrixV.villDest}}</td>
+									<td>
+										<a href="javascript:;" class="btn default btn-xs red-stripe">
+										<i class="fa fa-trash-o"></i> Delete </a>
+										<a href="javascript:;" class="btn btn-default btn-sm green-stripe">
+								        <i class="fa fa-pencil"></i> ToEdit </a>
+								    </td>
+									</tr>
+									</tbody>
+							</table>
+						</div>
+				       
+				       
+				       
+				       
+				       </div>
+	
+		
+			<!-- END DASHBOARD STATS -->
+		<!-- END PAGE CONTENT-->
+	
+	</div>
+	<!-- END CONTENT -->
+	</div>
+</div>
+<!-- END CONTAINER -->
+</div>

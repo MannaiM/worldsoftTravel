@@ -1,0 +1,123 @@
+<!-- BEGIN CONTENT -->
+	<div class="page-content-wrapper" ng-controller="AjouterTypeChmCtrl as vm">
+		<div class="page-content">
+			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			<div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+							<h4 class="modal-title">Modal title</h4>
+						</div>
+						<div class="modal-body">
+							 Widget settings form goes here
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn blue">Save changes</button>
+							<button type="button" class="btn default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+					<!-- /.modal-content -->
+				</div>
+				<!-- /.modal-dialog -->
+			</div>
+			<!-- /.modal -->
+			<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			
+			<!-- BEGIN PAGE HEADER-->
+			<h3 class="page-title">
+			WorldSoft<small> </small>
+			</h3>
+			<div class="page-bar">
+				<ul class="page-breadcrumb">
+					<li>
+						<i class="fa fa-home"></i>
+						<a href="#/Acceuil">Home</a>
+						<i class="fa fa-angle-right"></i>
+					</li>
+					<li>
+						<a href="#"></a>
+					</li>
+				</ul>
+		
+			</div>
+			<!-- END PAGE HEADER-->
+			<!-- BEGIN PAGE CONTENT-->
+			<!-- BEGIN DASHBOARD STATS -->
+			<div  ng-controller="AjouterTypeChmCtrl as vm">
+			<div class="row  dashboard-stat breadcrumb">
+			<h1>Ajouter un type de chambre correspond a un hotel</h1>
+	               <div class="col-md-3 ">
+						<span class="label label-sm bg-blue-chambray">Nom Type Chambre </span>
+						 <input
+							type="text" class="form-control input-inline input-medium"
+							ng-model="vm.ajouterTypeChmBean.ajtTypeC.nomTCham"
+							placeholder="Enter le nom de type chambre ">
+							<select id="template-contactform-title" name="template-contactform-title"
+							class="sm-form-control"
+								ng-model="vm.ajouterTypeChmBean.ajtTypeC.nomTCham">
+								<option value="Single">Single</option>
+								<option value="Double">Double</option>
+								<option value="Sweet">Sweet</option>
+								<option value="Voisine">Voisine</option>
+								<option value="Triple">Triple</option>
+								<option value="Quadriple">Quadriple</option>
+							</select>
+							<label ng-show="vm.nomError">champ vide</label>
+					</div>
+					 <div class="col-md-3 ">
+						<span class="label label-sm bg-blue-chambray">label type chambre </span>
+						 <input
+							type="text" class="form-control input-inline input-medium"
+							ng-model="vm.ajouterTypeChmBean.ajtTypeC.lblTCham"
+							placeholder="Enter label de Type chm ">
+							<label ng-show="vm.lblError">champ vide</label>
+					</div>
+					<label>Type: </label>
+					 <select id="template-contactform-title" name="template-contactform-title"
+							class="sm-form-control"
+								ng-model="vm.ajouterTypeChmBean.ajtTypeC.type">
+								<option value="s">Single</option>
+								<option value="d">Double</option>
+								<option value="S">Sweet</option>
+								<option value="v">Voisine</option>
+								<option value="T">Triple</option>
+								<option value="Q">Quadriple</option>
+							</select>
+ 
+					<div class="row">
+
+							<label class="label label-sm bg-blue-chambray">Hotel: </label> 
+							<select
+								ng-model="vm.ajouterTypeChmBean.ajtTypeC.idHotel">
+								<option value="{{hotel.idHo}}"
+									ng-repeat="hotel in vm.ajouterTypeChmBean.hotels">{{hotel.NomHo}}</option>
+							</select>
+                           
+						</div>
+			
+				</div>
+
+					 
+												
+
+						<button  ng-click="vm.addTypeChmabreH()" class="btn btn-primary  green">Ajouter un Type 
+							</button>
+
+        <a href="#/ListeTypeChm" class="btn btn-default btn-sm  red-stripe">
+								        <i class="fa fa-search"></i> Consulter Type Chambre </a>
+	
+	                    <div ng-if="vm.ajouterTypeChmBean.ajouterTCM == 'type chambre ajouté'" class="alert alert-block alert-success fade in">
+						<button type="button" class="close" data-dismiss="alert"></button>
+						<h4 class="alert-heading">Success!</h4>
+						<p> ce type de chambre est ajouté avec succé </p>
+						</div>
+		
+			<!-- END DASHBOARD STATS -->
+		<!-- END PAGE CONTENT-->
+	
+	</div>
+	<!-- END CONTENT -->
+	</div>
+</div>
+<!-- END CONTAINER -->

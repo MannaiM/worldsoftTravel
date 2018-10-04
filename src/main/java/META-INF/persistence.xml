@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="Worldsoft-Travel">
+	
+		<jta-data-source>java:/OracleDSBtoB</jta-data-source>
+
+		<class>com.worldsoft.domain.Arrangement</class>
+		<class>com.worldsoft.domain.ArrangementPK</class>
+		<class>com.worldsoft.domain.Avion</class>
+		<class>com.worldsoft.domain.ClassVol</class>
+		<class>com.worldsoft.domain.ClassVolPK</class>
+		<class>com.worldsoft.domain.Hotel</class>
+		<class>com.worldsoft.domain.Jour</class>
+		<class>com.worldsoft.domain.MvmentPrix</class>
+		<class>com.worldsoft.domain.Periode</class>
+		<class>com.worldsoft.domain.PeriodePK</class>
+		<class>com.worldsoft.domain.PeriodeSupplement</class>
+		<class>com.worldsoft.domain.PeriodeSupplementPK</class>
+		<class>com.worldsoft.domain.Promotion</class>
+		<class>com.worldsoft.domain.Reduction</class>
+		<class>com.worldsoft.domain.ReductionPK</class>
+		<class>com.worldsoft.domain.RefFonction</class>
+		<class>com.worldsoft.domain.RefTier</class>
+		<class>com.worldsoft.domain.RefUser</class>
+		<class>com.worldsoft.domain.RefUtilisateur</class>
+		<class>com.worldsoft.domain.Reservation</class>
+		<class>com.worldsoft.domain.ReservationPK</class>
+		<class>com.worldsoft.domain.Role</class>
+		<class>com.worldsoft.domain.RoleFonction</class>
+		<class>com.worldsoft.domain.RoleFonctionPK</class>
+		<class>com.worldsoft.domain.Supplement</class>
+		<class>com.worldsoft.domain.SupplementPK</class>
+		<class>com.worldsoft.domain.TypeChambre</class>
+		<class>com.worldsoft.domain.TypeChambrePK</class>
+		<class>com.worldsoft.domain.TypeVol</class>
+
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.ImprovedNamingStrategy" />
+			<property name="hibernate.connection.charSet" value="UTF-8" />
+			<property name="hibernate.show_sql" value="true" />
+		</properties>
+
+
+	</persistence-unit>
+</persistence>

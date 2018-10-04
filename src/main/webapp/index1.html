@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html data-ng-app="myApp">
+<head> 
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="css/app.css" />
+
+<script type="text/javascript"
+	src="bower_components/angularjs/angular.min.js"></script>
+<script type="text/javascript"
+	src="bower_components/sockjs/sockjs.min.js"></script>
+
+<script type="text/javascript" src="angular-beans.js"></script>
+
+<script type="text/javascript" src="js/filters.js"></script>
+<script type="text/javascript" src="js/services.js"></script>
+<script type="text/javascript" src="js/controllers.js"></script>
+<script type="text/javascript" src="js/directives.js"></script>
+<script type="text/javascript" src="js/module.js"></script>
+
+<meta charset="ISO-8859-1">
+<title>hello world</title>
+</head>
+
+<body ng-app="myApp">
+
+	<div class="container">
+		<div class="row top-buffer">
+			<div class="col-xs-8 col-xs-offset-2">
+
+				<div ng-controller="AuthentificationCtrl as vm">
+
+					<div class="form-group">
+						<fieldset>
+							<label>Login: </label> <input ng-model="vm.login"
+								class="form-control">
+						</fieldset>
+						<fieldset>
+							<label>Password: </label> <input ng-model="vm.pwd" type="password"
+								class="form-control">
+						</fieldset>
+					</div>
+<div ng-if="vm.authentifier == false">login et mot de passe incorrect</div>
+					<button ng-click="vm.authentification(vm.login,vm.pwd)"
+						class="btn btn-primary">click me</button>
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

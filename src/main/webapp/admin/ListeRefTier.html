@@ -1,0 +1,154 @@
+<!-- BEGIN CONTENT -->
+	<div class="page-content-wrapper" ng-controller="RefTierCtrl as vm">
+		<div class="page-content">
+			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			<div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+							<h4 class="modal-title">Modal title</h4>
+						</div>
+						<div class="modal-body">
+							 Widget settings form goes here
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn blue">Save changes</button>
+							<button type="button" class="btn default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+					<!-- /.modal-content -->
+				</div>
+				<!-- /.modal-dialog -->
+			</div>
+			<!-- /.modal -->
+			<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			
+			<!-- BEGIN PAGE HEADER-->
+			<h3 class="page-title">
+			WorldSoft<small> </small>
+			</h3>
+			<div class="page-bar">
+				<ul class="page-breadcrumb">
+					<li>
+						<i class="fa fa-home"></i>
+						<a href="#/Acceuil">Home</a>
+						<i class="fa fa-angle-right"></i>
+					</li>
+					<li>
+						<a href="#"></a>
+					</li>
+				</ul>
+		
+			</div>
+			<!-- END PAGE HEADER-->
+			<!-- BEGIN PAGE CONTENT-->
+			<!-- BEGIN DASHBOARD STATS -->
+			<div >
+			<div class="row  dashboard-stat breadcrumb">
+			<div>
+			<blockquote class="hero">
+			<p>afficher La liste des Tiers </p>
+			</blockquote>
+			</div>
+			
+	           
+	        <div class="row">
+
+							<label>REf TIER: </label> <select
+								ng-model="vm.refTierBean.refT.idRefTiers" 
+								ng-change="vm.findRefTierActif(vm.refTierBean.refT.tiersActif)">
+								<option value="{tier.idRefTiers}}"
+									ng-repeat="tier in vm.refTierBean.tiers">{{tier.tiersActif}}</option>
+							</select>
+                           
+						</div>
+
+<div class="portlet">
+						<div class="portlet-title">
+							<div class="caption">
+								<i class="fa fa-bell-o"></i>Liste des Tiers
+							</div>
+							<div class="tools">
+								<a href="javascript:;" class="collapse">
+								</a>
+								<a href="#portlet-config" data-toggle="modal" class="config">
+								</a>
+								<a href="javascript:;" class="reload">
+								</a>
+								<a href="javascript:;" class="remove">
+								</a>
+							</div>
+						</div>
+						
+						
+						<div class="portlet-body">
+							<div class="table-scrollable">
+							
+							<table  class="table table-striped table-bordered table-advance table-hover">
+								<thead>
+									<tr>
+										
+										<th>idtier</th>
+										<th>Nom Soci</th>
+								        <th>Adresse Soc</th>
+										<th>Telefhone</th>
+										<th>Email</th>
+									</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td>{{refTier.idRefTiers}}</td>
+									<td>{{refTier.resSocial}}</td>
+									<td><input class="form-control placeholder-no-fix"
+										type="text" 
+										ng-model="vm.refTierBean.refT.adrTiers" /></td>
+									<td><input class="form-control placeholder-no-fix"
+										type="text" autocomplete="off" placeholder="Labelle"
+										 ng-model="vm.refTierBean.refT.telTiers" /></td>
+										 <td>{{refTier.emailClient}}</td>
+										 <td>
+								<select ng-model="vm.refTierBean.refT.tiersActif" >
+									<option value="A">Active</option>
+									<option value="D">désactive</option>
+								</select>
+								</td>
+									<td> <a href="javascript:;" ng-click="vm.editRefTier()"
+										class="btn btn-default btn-sm green-stripe"> <i
+											class="fa fa-pencil"></i> Edit
+									</a></td>
+								</tr>
+									<tr ng-repeat="refTier in vm.refTierBean.tiers">
+									<td class="hidden-xs"value="{{refTier.idRefTiers}}">{{refTier.idRefTiers}}</td>
+									<td class="hidden-xs" value="{{refTier.idRefTiers}}">{{refTier.resSocial}}</td>
+									<td class="hidden-xs" value="{{refTier.idRefTiers}}">{{refTier.adrTiers}}</td>
+									<td class="hidden-xs"value="{{refTier.idRefTiers}}">{{refTier.telTiers}}</td>
+									<td class="hidden-xs"value="{{refTier.idRefTiers}}">{{refTier.emailClient}}</td>
+									<td class="hidden-xs"value="{{refTier.idRefTiers}}">{{refTier.tiersActif}}</td>
+									<td>
+										<a href="javascript:;" ng-click="vm.refTierBean.deleteTier(refT.idRefTiers)" class="btn default btn-xs red-stripe">
+										<i class="fa fa-trash-o"></i> Delete </a>
+										<a href="javascript:;"  ng-click="vm.getRefTiertoEdit(refTier)"
+										 class="btn btn-default btn-sm green-stripe">
+								        <i class="fa fa-pencil"></i> To Edit </a>
+								    </td>
+									</tr>
+									</tbody>
+							</table>
+						</div>
+				      
+				       
+				       
+				       </div>
+	
+		
+			<!-- END DASHBOARD STATS -->
+		<!-- END PAGE CONTENT-->
+	
+	</div>
+	<!-- END CONTENT -->
+	</div>
+</div>
+</div>
+<!-- END CONTAINER -->
+</div>

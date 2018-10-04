@@ -1,0 +1,104 @@
+<!-- BEGIN CONTENT -->
+	<div class="page-content-wrapper" ng-controller="AjouterACtrl as vm">
+		<div class="page-content">
+			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			<div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+							<h4 class="modal-title">Modal title</h4>
+						</div>
+						<div class="modal-body">
+							 Widget settings form goes here
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn blue">Save changes</button>
+							<button type="button" class="btn default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+					<!-- /.modal-content -->
+				</div>
+				<!-- /.modal-dialog -->
+			</div>
+			<!-- /.modal -->
+			<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			
+			<!-- BEGIN PAGE HEADER-->
+			<h3 class="page-title">
+			WorldSoft<small> </small>
+			</h3>
+			<div class="page-bar">
+				<ul class="page-breadcrumb">
+					<li>
+						<i class="fa fa-home"></i>
+						<a href="#/Acceuil">Home</a>
+						<i class="fa fa-angle-right"></i>
+					</li>
+					<li>
+						<a href="#"></a>
+					</li>
+				</ul>
+		
+			</div>
+			<!-- END PAGE HEADER-->
+			<!-- BEGIN PAGE CONTENT-->
+			<!-- BEGIN DASHBOARD STATS -->
+			<div >
+			<div class="row  dashboard-stat breadcrumb">
+			Ajouter un Avion
+	               <div class="col-md-3 ">
+						<span class="label label-sm bg-blue-chambray">Nom Avion</span>
+						 <input
+							type="text" class="form-control input-inline input-medium"
+							ng-model="vm.ajouterABean.ajtA.nomavion"
+							placeholder="Enter le nom de l'Avion ">
+							<label ng-show="vm.avError">champ vide</label>
+					</div>
+					<div class="col-md-3 ">
+						<span class="label label-sm bg-blue-chambray">l'Airline </span>
+						 <input
+							type="text" class="form-control input-inline input-medium"
+							ng-model="vm.ajouterABean.ajtA.airline"
+							placeholder="Enter l'airline ">
+							<label ng-show="vm.airError">champ vide</label>
+					</div>
+			        <div class="col-md-3 ">
+						<span class="label label-sm bg-blue-chambray">le type d' Avion </span>
+						 <input
+							type="text" class="form-control input-inline input-medium"
+							ng-model="vm.ajouterABean.ajtA.typeAv"
+							placeholder="Enter le type ">
+							<label ng-show="vm.typeError">champ vide</label>
+					</div>
+					<div class="col-md-3 ">
+						<span class="label label-sm bg-blue-chambray">abRviation </span>
+						 <input
+							type="text" class="form-control input-inline input-medium"
+							ng-model="vm.ajouterABean.ajtA.abrvAv"
+							placeholder="Enter l'Abrv">
+							<label ng-show="vm.abvError">champ vide</label>
+					</div>
+				</div>
+
+					 <div>					
+                        <button  ng-click="vm.addAvion1()" class="btn btn-primary  green">Ajouter avion
+						</button>
+                        <a href="#/ListeAvion" 
+						 class="btn btn-default btn-sm red-stripe">
+						 <i class="fa fa-search"></i> Consulter les Avion </a>
+	                 </div>	
+	                 
+	                  <div ng-if="vm.userBean.ajouteruserM == 'avion ajoutée'" class="alert alert-block alert-success fade in">
+						<button type="button" class="close" data-dismiss="alert"></button>
+						<h4 class="alert-heading">Success!</h4>
+						<p> Avion ajouté avec succée </p>
+						</div>
+			<!-- END DASHBOARD STATS -->
+		<!-- END PAGE CONTENT-->
+	
+	</div>
+	<!-- END CONTENT -->
+	</div>
+</div>
+<!-- END CONTAINER -->

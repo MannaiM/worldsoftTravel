@@ -1,0 +1,118 @@
+<!-- BEGIN CONTENT -->
+	<div class="page-content-wrapper"  ng-controller="AjouterArrCtrl as vm">
+		<div class="page-content">
+			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			<div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+							<h4 class="modal-title">Modal title</h4>
+						</div>
+						<div class="modal-body">
+							 Widget settings form goes here
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn blue">Save changes</button>
+							<button type="button" class="btn default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+					<!-- /.modal-content -->
+				</div>
+				<!-- /.modal-dialog -->
+			</div>
+			<!-- /.modal -->
+			<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			
+			<!-- BEGIN PAGE HEADER-->
+			<h3 class="page-title">
+			WordSoft<small> </small>
+			</h3>
+			<div class="page-bar">
+				<ul class="page-breadcrumb">
+					<li>
+						<i class="fa fa-home"></i>
+						<a href="#/Acceuil">Home</a>
+						<i class="fa fa-angle-right"></i>
+					</li>
+					<li>
+						<a href="#"></a>
+					</li>
+				</ul>
+		
+			</div>
+			<!-- END PAGE HEADER-->
+			<!-- BEGIN PAGE CONTENT-->
+			<!-- BEGIN DASHBOARD STATS -->
+			<div>
+			
+			<div class="row  dashboard-stat breadcrumb  ">
+			
+			<div>
+			<blockquote class="hero">
+			<p> Ajouter une reduction </p>
+			</blockquote>
+			</div>
+			
+			<div class="row">
+	               <div class="col-md-3 ">
+						<span class="label label-sm bg-blue-chambray">Nom Reduction </span>
+						 <input
+							type="text" class="form-control input-inline input-medium"
+							ng-model="vm.ajouterArrBean.ajtArr.nomarr"
+							placeholder="Enter le nom de l'Arrangement ">
+					</div>
+					 <div class="col-md-3 ">
+						<span class="label label-sm bg-blue-chambray">label Arrangement </span>
+						 <input
+							type="text" class="form-control input-inline input-medium"
+							ng-model="vm.ajouterArrBean.ajtArr.labArr"
+							placeholder="Enter label de l'Arrangement ">
+					</div>
+					<div class="col-md-1 "></div>
+					 <div class="col-md-3 ">
+					    <div class="row">
+                        <label class="bg-blue-chambray" >Hotel: </label>
+                         </div>
+                        <div class="row">
+                        <select
+						ng-model="vm.ajouterArrBean.ajtArr.idHotel" >
+						<option value="{{hotel.idHo}}"
+						ng-repeat="hotel in vm.ajouterArrBean.hotels">{{hotel.NomHo}}</option>
+						</select>
+                        </div>
+			         </div>
+
+				</div>
+			</div>
+					<div class="row  dashboard-stat breadcrumb ">
+						 						
+                        <div class="col-md-2 "></div>
+                        <div class="col-md-3 ">
+						<button  ng-click="vm.addArrangementH()" class="btn btn-primary green ">Ajouter un Arrangement
+						</button>
+						</div>
+						<div class="col-md-3 ">
+						<a href="#/ListeArr" 
+										 class="btn btn-default btn-sm red-stripe">
+								        <i class="fa fa-search"></i> Consulter les Arrangements </a>
+						</div>
+                        <div ng-if="vm.ajouterArrBean.ajouterArranM == 'arrangement ajouté'" class="alert alert-block alert-success fade in">
+						<button type="button" class="close" data-dismiss="alert"></button>
+						<h4 class="alert-heading">Success!</h4>
+						<p> Arrangement ajouté </p>
+						</div>
+                     
+	             </div>
+	
+		
+			<!-- END DASHBOARD STATS -->
+		<!-- END PAGE CONTENT-->
+	
+	</div>
+	<!-- END CONTENT -->
+	</div>
+</div>
+<!-- END CONTAINER -->
+
+<!-- BEGIN FOOTER -->

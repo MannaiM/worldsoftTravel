@@ -1,0 +1,147 @@
+<!-- BEGIN CONTENT -->
+	<div class="page-content-wrapper" ng-controller="AjouterACtrl as vm">
+		<div class="page-content">
+			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			<div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+							<h4 class="modal-title">Modal title</h4>
+						</div>
+						<div class="modal-body">
+							 Widget settings form goes here
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn blue">Save changes</button>
+							<button type="button" class="btn default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+					<!-- /.modal-content -->
+				</div>
+				<!-- /.modal-dialog -->
+			</div>
+			<!-- /.modal -->
+			<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			
+			<!-- BEGIN PAGE HEADER-->
+			<h3 class="page-title">
+			WorldSoft<small> </small>
+			</h3>
+			<div class="page-bar">
+				<ul class="page-breadcrumb">
+					<li>
+						<i class="fa fa-home"></i>
+						<a href="#/Acceuil">Home</a>
+						<i class="fa fa-angle-right"></i>
+					</li>
+					<li>
+						<a href="#"></a>
+					</li>
+				</ul>
+		
+			</div>
+			<!-- END PAGE HEADER-->
+			<!-- BEGIN PAGE CONTENT-->
+			<!-- BEGIN DASHBOARD STATS -->
+			<div  ng-controller="AjouterACtrl as vm">
+			<div class="row  dashboard-stat breadcrumb">
+			<div>
+			<blockquote class="hero">
+			<p>afficher ts les avions </p>
+			</blockquote>
+			</div>
+			
+			
+					
+					<a href="#/AjouterAvion"  class="btn btn-primary  bg-blue-chambray">
+								        <i class="fa fa-pencil"></i> Ajouter Avion </a>
+					<div class="portlet">
+						<div class="portlet-title">
+							<div class="caption">
+								<i class="fa fa-bell-o"></i>Table Avion
+							</div>
+							<div class="tools">
+								<a href="javascript:;" class="collapse">
+								</a>
+								<a href="#portlet-config" data-toggle="modal" class="config">
+								</a>
+								<a href="javascript:;" class="reload">
+								</a>
+								<a href="javascript:;" class="remove">
+								</a>
+							</div>
+						</div>
+						<div>
+							<label>AirLine: </label> <select ng-model="vm.airline"
+								ng-change="vm.findAllavionsByAir(vm.airline)">
+								<option value="{{avion.airline}}"
+									ng-repeat="avion in vm.ajouterABean.airlines">{{avion.airline}}</option>
+							</select>
+
+				      </div>
+				      <div ng-if="vm.ajouterABean.editAvionM == 'avion Modifié'" class="alert alert-block alert-success fade in">
+						<button type="button" class="close" data-dismiss="alert"></button>
+						<h4 class="alert-heading">Success!</h4>
+						<p> Avion Modifié avec succés </p>
+						</div>
+				      <div class="portlet-body">
+							<div class="table-scrollable">
+							
+							<table  class="table table-striped table-bordered table-advance table-hover">
+							
+								<thead>
+									<tr>
+										
+										<th>id</th>
+										<th>nom Avion</th>
+								        <th>label avion</th>
+										<th>airline</th>
+										<th>type Avion</th>
+									</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td>{{vm.ajouterABean.ajtA.idavion}}</td>
+									<td>{{vm.ajouterABean.ajtA.nomavion}}</td>
+									<td>{{vm.ajouterABean.ajtA.abrvAv}}</td>
+									<td><input class="form-control placeholder-no-fix"
+										type="text" autocomplete="off" placeholder="Airlines"
+										ng-model="vm.ajouterABean.ajtA.airline" /></td>
+									<td><input class="form-control placeholder-no-fix"
+										type="text" autocomplete="off" placeholder="Type Avion"
+										name="username" ng-model="vm.ajouterABean.ajtA.typeAv" /></td>
+									<td> <a href="javascript:;" ng-click="vm.editAvion()"
+										class="btn btn-default btn-sm green-stripe"> <i
+											class="fa fa-pencil"></i> Edit
+									</a></td>
+								</tr>
+									<tr ng-repeat="avion in vm.ajouterABean.avions">
+										<td class="hidden-xs" value="{{avion.idavion}}">{{avion.idavion}}</td>
+										<td  class="highlight"value="{{avion.idavion}}">{{avion.nomavion}}</td>
+										<td class="hidden-xs" value="{{avion.idavion}}">{{avion.abrvAv}}</td>
+										<td  class="highlight" value="{{avion.idavion}}">{{avion.airline}}</td>
+										<td class="hidden-xs" value="{{avion.idavion}}">{{avion.typeAv}}</td>
+										<td>
+										<a href="javascript:;" ng-click="vm.ajouterABean.deleteAvion(avion.idavion)" class="btn default btn-xs red-stripe">
+										<i class="fa fa-trash-o"></i> Delete </a>
+										<a href="javascript:;" ng-click="vm.getAviontoEdit(avion)" class="btn btn-default btn-sm green-stripe">
+								        <i class="fa fa-pencil"></i> Edit </a>
+										</td>
+									</tr>
+									</tbody>
+							</table>
+						</div>				       
+				       </div>
+	
+		
+			<!-- END DASHBOARD STATS -->
+		<!-- END PAGE CONTENT-->
+	</div>
+	<!-- END CONTENT -->
+	</div>
+</div>
+<!-- END CONTAINER -->
+</div>
+</div>
+<!-- BEGIN FOOTER -->

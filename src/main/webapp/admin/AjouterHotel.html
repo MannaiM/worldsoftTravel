@@ -1,0 +1,174 @@
+<!-- BEGIN CONTENT -->
+	<div class="page-content-wrapper" ng-controller="AjouterHCtrl as vm">
+		<div class="page-content">
+			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			<div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+							<h4 class="modal-title">Modal title</h4>
+						</div>
+						<div class="modal-body">
+							 Widget settings form goes here
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn blue">Save changes</button>
+							<button type="button" class="btn default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+					<!-- /.modal-content -->
+				</div>
+				<!-- /.modal-dialog -->
+			</div>
+			<!-- /.modal -->
+			<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			
+			<!-- BEGIN PAGE HEADER-->
+			<h3 class="page-title">
+			WorldSoft<small> </small>
+			</h3>
+			<div class="page-bar">
+				<ul class="page-breadcrumb">
+					<li>
+						<i class="fa fa-home"></i>
+						<a href="#/Acceuil">Home</a>
+						<i class="fa fa-angle-right"></i>
+					</li>
+					<li>
+						<a href="#"></a>
+					</li>
+				</ul>
+		
+			</div>
+			<!-- END PAGE HEADER-->
+			<!-- BEGIN PAGE CONTENT-->
+			<!-- BEGIN DASHBOARD STATS -->
+			<div  ng-controller="AjouterHCtrl as vm">
+			<div class="row  dashboard-stat breadcrumb">
+			<h1>Ajouter un Hotel</h1>
+	               <div class="col-md-3 ">
+						<span class="label label-sm bg-blue-chambray">Nom Hotel </span>
+						 <input
+							type="text" class="form-control input-inline input-medium"
+							ng-model="vm.ajouterHBean.ajtH.NomHo"
+							placeholder="Enter le nom de l'Hotel ">
+							<label ng-show="vm.nmError">champ vide</label>
+					</div>
+					<div class="col-md-3 ">
+						<span class="label label-sm bg-blue-chambray">Pays </span>
+						 <input
+							type="text" class="form-control input-inline input-medium"
+							ng-model="vm.ajouterHBean.ajtH.pays"
+							placeholder="Enter le Pays ">
+							
+<select ng-model="vm.ajouterHBean.ajtH.pays" ng-change="value">
+<option value="Tunisie">Tunisie</option>
+
+</select>
+
+
+
+					</div>
+			        <div class="col-md-3 ">
+						<span class="label label-sm bg-blue-chambray">ville </span>
+						 <input 
+							type="text" class="form-control input-inline input-medium"
+							ng-model="vm.ajouterHBean.ajtH.ville"
+							placeholder="Enter Ville ">
+							<select id="template-contactform-title" name="template-contactform-title"
+							class="sm-form-control"
+							ng-model="vm.ajouterHBean.ajtH.ville" >
+                             <option value="Sousse">Sousse</option>
+                             <option value="Mahdia">Mahdia</option>
+                             <option value="Tabarka">Tabarka</option>
+                             <option value="Hammamet">Hammamet</option>
+                             <option value="Tunis">Tunis</option>
+                             <option value="Nabeul">Nabeul</option>
+                             <option value="Bizerte">Bizerte</option> 
+                             <option value="Monastir">Monastir</option>
+                            <option value="Zarzis Djerba">Zarzis Djerba</option>	 
+                            <option value="Béja">Béja</option>
+                            <option value="Tozeur">Tozeur</option>		
+                             <option value="Aïn Draham">Aïn Draham</option>		
+                             </select>
+					</div>
+					<div class="col-md-3 ">
+						<span class="label label-sm bg-blue-chambray">Adresse </span>
+						 <input
+							type="text" class="form-control input-inline input-medium"
+							ng-model="vm.ajouterHBean.ajtH.adr"
+							placeholder="Enter l'Adresse">
+							<label ng-show="vm.adrError">champ vide</label>
+					</div>
+					<div class="col-md-3 ">
+						<span class="label label-sm bg-blue-chambray">Abrviation </span>
+						 <input
+							type="text" class="form-control input-inline input-medium"
+							ng-model="vm.ajouterHBean.ajtH.abrv"
+							placeholder="Enter l'Adresse">
+							<label ng-show="vm.abrError">champ vide</label>
+					</div>
+					
+					<div class="col-md-3 ">
+					  <div class="row">
+						<span class="label label-sm bg-blue-chambray">la Categorie </span>
+						</div>
+						<div class="row">
+						<select id="template-contactform-title" name="template-contactform-title"
+							class="sm-form-control"
+								ng-model="vm.ajouterHBean.ajtH.categorieHotel"
+								>
+								<option value="1">1 *</option>
+								<option value="2">2 **</option>
+								<option value="3">3 ***</option>
+								<option value="4">4 ****</option>
+								<option value="5">5 *****</option>
+								<option value="6">6 ******</option>
+								
+							</select>
+						
+						</div>
+					     </div>
+			
+			
+				</div>
+
+					 
+						<div class="row">						
+
+						<button  ng-click="vm.addHotel1()" class="btn btn-primary  green">Ajouter un hotel
+							</button>
+              </div>
+            <div class="tiles dashboard-stat breadcrumb ">
+			<div class="row">
+			<div class="tile image selected">
+					<div class="tile-body">
+						<img src="assets/admin/layout/img/hotel2.jpg" alt="">
+					</div>
+					<div class="tile-object">
+						<div class="name">
+						</div>
+					</div>
+				</div>
+				</div>
+				
+				<div class="row">
+					<a href="#/ListeHotel"  class="btn btn-primary  bg-blue-chambray">
+								        <i class="fa fa-pencil"></i> Consulter les Hotels </a>
+								        </div>
+								        </div>
+	                 <div ng-if="vm.ajouterHBean.ajouterhotelM == 'Hotel ajouté'" class="alert alert-block alert-success fade in">
+						<button type="button" class="close" data-dismiss="alert"></button>
+						<h4 class="alert-heading">Success!</h4>
+						<p> Hotel ajouté avec succé </p>
+						</div>
+	                         
+		
+			<!-- END DASHBOARD STATS -->
+		<!-- END PAGE CONTENT-->
+	
+	</div>
+	<!-- END CONTENT -->
+	</div>
+</div>

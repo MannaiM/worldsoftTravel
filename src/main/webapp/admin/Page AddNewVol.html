@@ -1,0 +1,229 @@
+
+ <!-- BEGIN CONTENT -->
+		<div class="page-content-wrapper" ng-controller="MvmntPrixVolCtrl as vm">
+			<div class="page-content">
+				<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+				<div class="modal fade" id="portlet-config" tabindex="-1"
+					role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal"
+									aria-hidden="true"></button>
+								<h4 class="modal-title">Modal title</h4>
+							</div>
+							<div class="modal-body">Widget settings form goes here</div>
+							<div class="modal-footer">
+								<button type="button" class="btn blue">Save changes</button>
+								<button type="button" class="btn default" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+						<!-- /.modal-content -->
+					</div>
+					<!-- /.modal-dialog -->
+				</div>
+				<!-- /.modal -->
+				<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+
+				<!-- BEGIN PAGE HEADER-->
+				<h3 class="page-title">
+					WorldSoft<small> </small>
+				</h3>
+				<div class="page-bar">
+					<ul class="page-breadcrumb">
+						<li><i class="fa fa-home"></i> <a href="#/Acceuil">Home</a>
+							<i class="fa fa-angle-right"></i></li>
+						<li><a href="#"></a></li>
+					</ul>
+
+				</div>
+				<!-- END PAGE HEADER-->
+				<!-- BEGIN PAGE CONTENT-->
+				<!-- BEGIN DASHBOARD STATS -->
+				<div >
+					<div class="row dashboard-stat breadcrumb">
+
+						<div class="col-md-3">
+
+							<div class="row">ajouter une date</div>
+							<div class="row">
+                                <i class="fa fa-calendar"></i>
+								<input type="text" pikaday="myPickerObject"
+									ng-model="vm.mvmntPrixVolBean.mvtV.dateRes "/>
+									<label ng-show="vm.dtResError">champ vide</label>
+									
+									
+							</div>
+						</div>
+						<div class="col-md-2">
+
+							<div class="row">ajouter l'horraire de dep</div>
+							<div class="row">
+								<input type="time"
+									ng-model="vm.mvmntPrixVolBean.mvtV.horrairedepart "/>
+									<label ng-show="vm.hrdepError">champ vide</label>
+							</div>
+							<div class="row">Escale</div>
+							<div class="row">
+
+								<select ng-model="vm.mvmntPrixVolBean.mvtV.escale">
+									<option value="E">E</option>
+									<option value="D">D</option>
+								</select>
+							</div>
+
+							<div class="row">
+								<label>Avion: </label>
+							</div>
+							<div class="row">
+								<select ng-model="vm.mvmntPrixVolBean.mvtV.idavion"
+									ng-change="vm.mvmntPrixVolBean.findclassVolByAvion(vm.mvmntPrixVolBean.mvtV.idavion)">
+									<option value="{{avion.idavion}}"
+										ng-repeat="avion in vm.mvmntPrixVolBean.avions">{{avion.nomavion}}</option>
+								</select>
+								
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="row">
+
+
+								<label>ClassVol: </label> <select
+									ng-model="vm.mvmntPrixVolBean.mvtV.idClassVol">
+									<option value="{{classVol.idClassVol}}"
+										ng-repeat="classVol in vm.mvmntPrixVolBean.classVols">{{classVol.nomClass}}</option>
+								</select>
+							</div>
+
+
+							<div class="row">
+								<input type="text"
+									class="form-control input-inline input-medium"
+									ng-model="vm.mvmntPrixVolBean.mvtV.dep"
+									placeholder="Enter airoport Dep "> 
+									
+									<select ng-model="vm.mvmntPrixVolBean.mvtV.dep">
+                                 <option value="CDG">Aeroport Paris-Charles-de-Gaulle, Paris, France</option>
+                                 <option value="TUN"> Aeroport international de Tunis-Carthage </option>
+                                  <option value="ORY">Paris Orly</option>
+                                 <option value="CEQ">Cannes - Mandelieu, France</option>
+                                <option value="NCE">Nice-Côte d'Azur</option>
+                                 <option value="SXF">Berlin-Schönefeld</option>
+                                 <option value="TXL">Berlin-Tegel</option>
+                                 <option value="DJE"> Aeroport international de Djerba-Zarzis </option>
+                                 <option value="NBE"> Aeroport international d'Enfidha-Hammamet </option>
+                                 <option value="MIR"> Aeroport international de Monastir Habib-Bourguiba </option>
+                                 
+                                 <option value="TBJ"> Aeroport international de Tabarka-Aïn Draham </option>
+                                 </select>
+									
+									
+									<input type="text" class="form-control input-inline input-medium"
+									ng-model="vm.mvmntPrixVolBean.mvtV.arr"
+									placeholder="Enter airoport Arr ">
+									<select ng-model="vm.mvmntPrixVolBean.mvtV.arr">
+                                 <option value="CDG">Paris-Charles-de-Gaulle, Paris, France</option>
+                                 <option value="TUN">international de Tunis-Carthage </option>
+                                  <option value="ORY">Paris Orly</option>
+                                 <option value="CEQ">Cannes - Mandelieu, France</option>
+                                <option value="NCE">Nice-Côte d'Azur</option>
+                                 <option value="SXF">Berlin-Schönefeld</option>
+                                 <option value="TXL">Berlin-Tegel</option>
+                                 <option value="DJE">international de Djerba-Zarzis </option>
+                                 <option value="NBE"> international d'Enfidha-Hammamet </option>
+                                 <option value="MIR"> international de Monastir Habib-Bourguiba </option>
+                                 
+                                 <option value="TBJ"> international de Tabarka-Aïn Draham </option>
+                                 </select>
+									
+									
+									 <input type="text" class="form-control input-inline input-medium"
+									ng-model="vm.mvmntPrixVolBean.mvtV.dureeVol"
+									placeholder="Durée de vol ">
+									<label ng-show="vm.dureeVolError">champ vide</label>
+                            </div>
+						</div>
+						<div class="col-md-3">
+						<span class="label label-sm label-danger">Id Segment: </span>
+							<input type="text" class="form-control input-inline input-medium"
+								ng-model="vm.mvmntPrixVolBean.mvtV.idVolSegment"
+								placeholder="id_segment "> 
+								<label ng-show="vm.idVolError">champ vide</label>
+								<span class="label label-sm label-danger">Numero de Vol: </span>
+								<input type="text" class="form-control input-inline input-medium"
+								ng-model="vm.mvmntPrixVolBean.mvtV.numVol"
+								placeholder="Num Vol "/>
+								<label ng-show="vm.numVolError">champ vide</label>
+								<span class="label label-sm label-danger">Numero de Place: </span>
+								<input type="text" class="form-control input-inline input-medium"
+								ng-model="vm.mvmntPrixVolBean.mvtV.nbrP"
+								placeholder="Num Place "/>
+								<label ng-show="vm.nbrPError">champ vide</label>
+
+                        </div>
+					</div>
+					
+
+
+					<div class="row breadcrumb">
+
+						<div class="col-md-3 col-sm-3 col-xs-6 text-stat">
+							<span class="label label-sm label-danger">Prix d'achat: </span>
+							 <input type="text" class="form-control input-inline input-medium"
+								ng-model="vm.mvmntPrixVolBean.mvtV.prixAchat"
+								placeholder="Enter Prix d'achat "/>
+								<label ng-show="vm.prixAchatError">champ vide</label>
+						</div>
+						<div class="col-md-3 col-sm-3 col-xs-6 text-stat">
+						<div class="row">
+							<span class="label label-sm label-success ">La Marge: </span> <input
+								type="text" class="form-control input-inline input-medium"
+								ng-model="vm.mvmntPrixVolBean.mvtV.marge"
+								placeholder="Enter % marge"/>
+								<label ng-show="vm.margeError">champ vide</label>
+						</div>
+						
+						</div>
+						<div class="col-md-3 col-sm-3 col-xs-6 text-stat">
+							
+							<span class="label label-sm label-danger">Prix de Vente:
+							</span> 
+							<input type="text"
+								class="form-control input-inline input-medium"
+								ng-model="vm.mvmntPrixVolBean.mvtV.prixVente"
+								placeholder="Enter Prix de vente"/>
+								<label ng-show="vm.prixVenteError">champ vide</label>
+						
+						</div>
+						<div class="col-md-2 col-sm-3 col-xs-6 text-stat">
+							<span class="label label-sm label-success ">num vol </span> <input
+								type="text" class="form-control input-inline input-medium"
+								ng-model="vm.mvmntPrixVolBean.mvtV.numVol"
+								placeholder="Enter le num du vol"/>
+								<label ng-show="vm.numVolError">champ vide</label>
+						</div>
+
+
+
+						<button ng-click="vm.addMvmentPrixVol()"
+							class="btn btn-primary red-intense">Ajouter un Vol</button>
+
+
+					</div>
+<div ng-if="vm.mvmntPrixVolBean.ajoutermvmntVolM == 'Vol ajouté'" class="alert alert-block alert-success fade in">
+						<button type="button" class="close" data-dismiss="alert"></button>
+						<h4 class="alert-heading">Success!</h4>
+						<p> Le Vol est ajouté avec Succé </p>
+						</div>
+
+
+					<!-- END DASHBOARD STATS -->
+					<!-- END PAGE CONTENT-->
+				</div>
+
+				<!-- END CONTENT -->
+			</div>
+		</div>
+
+		<!-- END CONTAINER -->
+	

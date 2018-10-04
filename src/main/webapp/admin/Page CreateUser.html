@@ -1,0 +1,126 @@
+<div class="page-content-wrapper" >
+		<div class="page-content">
+			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			<div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+							<h4 class="modal-title">Modal title</h4>
+						</div>
+						<div class="modal-body">
+							 Widget settings form goes here
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn blue">Save changes</button>
+							<button type="button" class="btn default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+					<!-- /.modal-content -->
+				</div>
+				<!-- /.modal-dialog -->
+			</div>
+			<!-- /.modal -->
+			<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			
+			<!-- BEGIN PAGE HEADER-->
+			<h3 class="page-title">
+			WorldSoft<small> </small>
+			</h3>
+			<div class="page-bar">
+				<ul class="page-breadcrumb">
+					<li>
+						<i class="fa fa-home"></i>
+						<a href="#/Acceuil">Home</a>
+						<i class="fa fa-angle-right"></i>
+					</li>
+					<li>
+						<a href="#"></a>
+					</li>
+				</ul>
+		
+			</div>
+			<!-- END PAGE HEADER-->
+			<!-- BEGIN PAGE CONTENT-->
+			<!-- BEGIN DASHBOARD STATS -->
+			<div class="row">
+			<div class="col-md-6 dashboard-stat breadcrumb " >
+			<div  ng-controller="UserCtrl as vm">
+
+					 
+						
+							<label>NomUser: </label> 
+							
+							<div class="form-group">
+			<!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+			<label class="control-label visible-ie8 visible-ie9 ">Username</label>
+			<div class="input-icon">
+				<i class="fa fa-user"></i>
+				<input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Username" name="username" 
+				ng-model="vm.userBean.user.nomUser"/>
+			</div>
+		</div>
+		
+						
+						
+						
+						
+						<div class="form-group">
+					
+							<label  >Login : </label> 
+							<div class="form-group">
+			<!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+			<label class="control-label visible-ie8 visible-ie9">UserLogin</label>
+			
+			<div class="input-icon">
+				<i class="fa fa-user"></i>
+				<input class="form-control placeholder-no-fix" type="text" ng-minlength="2" ng-maxlength="20" autocomplete="off" placeholder="UserLogin" name="username" 
+				ng-model="vm.userBean.user.userLogin"/>
+				
+			</div>
+		</div>
+			
+						
+		</div>
+		
+					
+							<label >Password: </label>
+							<div class="form-group">
+							
+			<label class="control-label visible-ie8 visible-ie9 ">Password</label>
+			<div class="input-icon ">
+				<i class="fa fa-lock  "></i>  
+				<input class="form-control placeholder-no-fix " type="password" autocomplete="off" placeholder="Password" name="password" 
+				ng-model="vm.userBean.user.userPwd"/>
+			</div>
+		</div>
+					
+							<label  >Role : </label>
+							 <select ng-model="vm.userBean.user.role.idRole">
+								<option value="{{role.idRol}}"
+									ng-repeat="role in vm.userBean.roles">{{role.lRol}}</option>
+							</select>
+						
+						
+
+						<button  ng-click="vm.addRefUser()" class="btn btn-primary  red-intense">Add User
+							</button>
+
+
+	<a href="#/ListeUsers"  class="btn btn-primary red-stripe">
+								        <i class="fa fa-search"></i> find All Users </a>
+	<div ng-if="vm.userBean.ajouterAvionM == 'utilisateur ajouté'" class="alert alert-block alert-success fade in">
+						<button type="button" class="close" data-dismiss="alert"></button>
+						<h4 class="alert-heading">Success!</h4>
+						<p> utilisateur ajouté avec succée </p>
+						</div>
+		
+			<!-- END DASHBOARD STATS -->
+		<!-- END PAGE CONTENT-->
+		</div>
+	</div>
+	<!-- END CONTENT -->
+	
+</div>
+<!-- END CONTAINER -->
+</div></div>

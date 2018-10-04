@@ -1,0 +1,206 @@
+<!-- BEGIN CONTENT -->
+	
+<div class="page-content-wrapper" ng-controller="MvmPrixCtrl as vm">
+			<div class="page-content">
+				<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+				<div class="modal fade" id="portlet-config" tabindex="-1"
+					role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal"
+									aria-hidden="true"></button>
+								<h4 class="modal-title">Modal title</h4>
+							</div>
+							<div class="modal-body">Widget settings form goes here</div>
+							<div class="modal-footer">
+								<button type="button" class="btn blue">Save changes</button>
+								<button type="button" class="btn default" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+						<!-- /.modal-content -->
+					</div>
+					<!-- /.modal-dialog -->
+				</div>
+				<!-- /.modal -->
+				<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+
+				<!-- BEGIN PAGE HEADER-->
+				<h3 class="page-title">
+					WorldSoft<small> </small>
+				</h3>
+				<div class="page-bar">
+					<ul class="page-breadcrumb">
+						<li><i class="fa fa-home"></i> <a href="#/Acceuil">Home</a>
+							<i class="fa fa-angle-right"></i></li>
+						<li><a href="#"></a></li>
+					</ul>
+
+				</div>
+				<!-- END PAGE HEADER-->
+				<!-- BEGIN PAGE CONTENT-->
+				<!-- BEGIN DASHBOARD STATS -->
+<div class="row  dashboard-stat breadcrumb"> Formulaire Pour Ajouter les Chambre D'un hotel avec un Arrangement et un type dans une periode</div>
+				<div class="row  dashboard-stat breadcrumb">
+					<div class="col-md-1"></div>
+					<div class=" col-md-2">
+
+						<div class="row ">
+							<label class="col-md-3 control-label">Les Jours</label>
+						</div>
+						<div class="row">
+							<div class="checkbox-list">
+								<label ng-repeat="jour in vm.mvmntPrixBean.jours"><input
+									type="checkbox" value="{{jour.idjour}}"
+									ng-click="vm.toggleJour(jour.idjour)"> {{jour.nomjour}}
+								</label>
+							</div>
+						</div>
+					
+
+                  </div>
+
+					<div class="col-md-1"></div>
+
+					<div class="col-md-2 ">
+						<div class="row">
+
+							<label>Category: </label> <select id="template-contactform-title" name="template-contactform-title"
+							class="sm-form-control"
+							 ng-model="vm.category"
+								ng-change="vm.findHotelByCategoryermvmnt(vm.category)">
+								<option value="{{hotel.categorieHotel}}"
+									ng-repeat="hotel in vm.mvmntPrixBean.category">{{hotel.categorieHotel}}</option>
+							</select>
+
+						</div>
+
+						<div class="row">
+
+							<label>Hotel: </label> <select id="template-contactform-title" name="template-contactform-title"
+							class="sm-form-control"
+								ng-model="vm.mvmntPrixBean.mvtH.idHotel"
+								ng-change="vm.findPerideArrangementTypeChambreByHotel(vm.mvmntPrixBean.mvtH.idHotel)">
+								<option value="{{hotel.idHo}}"
+									ng-repeat="hotel in vm.mvmntPrixBean.hotels">{{hotel.NomHo}}</option>
+							</select>
+
+						</div>
+
+
+						<div class="row">
+
+							<label>Periode: </label>
+							 <select id="template-contactform-title" name="template-contactform-title"
+							class="sm-form-control"
+							  ng-model="vm.mvmntPrixBean.mvtH.idPeriode">
+								<option value="{{periode.idP}}"
+									ng-repeat="periode in vm.mvmntPrixBean.periodes">{{periode.nomP}}</option>
+							</select>
+
+						</div>
+					</div>
+
+
+
+					<div class="col-md-1"></div>
+					<div class="col-md-2">
+						<div class="row">
+							<label class="col-md-2 control-label">Type de Chambre</label>
+						</div>
+						<div class="row">
+							<div class="checkbox-list">
+								<label ng-repeat="typeChambre in vm.mvmntPrixBean.typeChambres">
+									<input type="checkbox" value="{{typeChambre.idTCham}}"
+									ng-click="vm.toggleTypehambre(typeChambre.idTCham)" />
+									{{typeChambre.nomTCham}}
+								</label>
+							</div>
+						</div>
+</div>
+					<div class="col-md-1"></div>
+					<div class="col-md-2 ">
+						<div class="row">
+							<label class="col-md-3 control-label">Arrangement</label>
+						</div>
+						<div class="row">
+							<div class="checkbox-list">
+								<label ng-repeat="arrangement in vm.mvmntPrixBean.arrangements">
+									<input type="checkbox" value="{{arrangement.idarr}}"
+									ng-click="vm.toggleArrangement(arrangement.idarr)" />
+									{{arrangement.nomarr}}
+								</label>
+							</div>
+						</div>
+					</div>
+
+				</div>
+					
+
+
+				<div class="row breadcrumb" >
+
+					<div class="col-md-3 col-sm-3 col-xs-6 text-stat">
+						<span class="label label-sm label-success" >Prix d'achat: </span>
+						 <input
+							type="text" class="form-control input-inline input-medium"
+							ng-model="vm.mvmntPrixBean.mvtH.prixAchat"
+							placeholder="Enter Prix d'achat "/>
+							<label ng-show="vm.prixError">champ vide</label>
+					</div>
+					<div class="col-md-3 col-sm-3 col-xs-6 text-stat">
+						<span class="label label-sm label-danger ">Prix de Vente:
+						</span> <input type="text" class="form-control input-inline input-medium"
+							ng-model="vm.mvmntPrixBean.mvtH.prixVente"
+							placeholder="Enter Prix de vente"/>
+							<label ng-show="vm.prixAError">champ vide</label>
+					</div>
+					<div class="col-md-3 col-sm-3 col-xs-6 text-stat">
+						<span class="label label-sm label-info">La Marge: </span> <input
+							type="text" class="form-control input-inline input-medium"
+							ng-model="vm.mvmntPrixBean.mvtH.marge"
+							placeholder="Enter % marge">
+					</div>
+					
+
+					<div class="col-md-2 col-sm-3 col-xs-6 text-stat">
+						<span class="label label-sm label-success ">nb des chambres
+						</span> <input type="text" class="form-control input-inline input-medium"
+							ng-model="vm.mvmntPrixBean.mvtH.nbreChm"
+							placeholder="Enter le nombre de chambre"/>
+							<label ng-show="vm.nbrCError">champ vide</label>
+							
+					</div>
+
+					<div class="row">
+						<div class="col-md-2">
+							<button class="btn purple-plum" type="button"
+								ng-click="vm.addMvtPrix()">Ajouter</button>
+						</div>
+					</div>
+				
+
+
+				
+
+
+
+</div>
+<div ng-if="vm.mvmntPrixBean.ajoutermvmntM == 'chambres ajoutée'" class="alert alert-block alert-success fade in">
+						<button type="button" class="close" data-dismiss="alert"></button>
+						<h4 class="alert-heading">Success!</h4>
+						<p> Les Chambres sont ajoutées avec Succé </p>
+						</div>
+
+
+
+
+				<!-- END DASHBOARD STATS -->
+				<!-- END PAGE CONTENT-->
+			</div>
+		
+		<!-- END CONTENT -->
+
+</div>
+	<!-- END CONTAINER -->
+	
